@@ -5,3 +5,4 @@
 3. Titanic survive rate - 2020 (FastAI, python)
 4. Minimum wages vs Employment Rate - 2021 (Excel, Stata)
 5. Customer Behaviour - 2021 (CSV, R) 
+6. Facial Keypoints Detection (python, Tensorflow, Keras, CNN)
