@@ -1,1 +1,0 @@
-This contains the submission code for MRnet challenge.

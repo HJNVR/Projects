@@ -1,3 +1,0 @@
-include ':app'
-rootProject.name = "img_classification_android"
-include ':OpenCVLib430'
