@@ -1,0 +1,44 @@
+SID	Company
+7	SBS Transit
+14	SBS Transit
+14	Tower Transit
+16	Go-Ahead Singapore
+16	SBS Transit
+16	Tower Transit
+36	SBS Transit
+36	Tower Transit
+77	SBS Transit
+77	SMRT Buses
+106	Tower Transit
+111	SBS Transit
+124	SBS Transit
+128	SBS Transit
+128	SMRT Buses
+162	SBS Transit
+167	SMRT Buses
+171	SMRT Buses
+174	SBS Transit
+175	SBS Transit
+190	SMRT Buses
+502	SBS Transit
+518	Go-Ahead Singapore
+587	BT&Tan
+587	Bus-Plus
+590	SMRT Buses
+598	Bus-Plus
+600	SBS Transit
+600	SMRT Buses
+602	SMRT Buses
+610	Bus-Plus
+610	SMRT Buses
+650	SMRT Buses
+701	SBS Transit
+732	SBS Transit
+740	Go-Ahead Singapore
+740	SMRT Buses
+805	Go-Ahead Singapore
+805	SMRT Buses
+850	BT&Tan
+960	Bus-Plus
+960	SBS Transit
+960	SMRT Buses

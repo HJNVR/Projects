@@ -1,0 +1,151 @@
+stopID	locationDesc	address
+1029	Cosmic Insurance Bldg	104 North Bridge Rd
+1039	Nth Bridge Commercial Cplx	102 North Bridge Rd
+1139	Parkview Sq	99 North Bridge Rd
+3011	Fullerton Sq	77 Fullerton Rd
+3071	Opp The Ogilvy Ctr	29 Robinson Rd
+3221	Prudential Twr	34 Cecil St
+3223	Itnl Plaza	1 Anson Rd
+4111	Capitol Bldg	179 Stamford Rd
+4121	SMU	80 Stamford Rd
+4143	Stamford Ct	12 Hill St
+4151	Cath of The Good Shepherd	Victoria St
+4222	Clarke Quay Stn	31 Eu Tong Sen St
+4223	Mica Bldg	23 Hill St
+4249	Opp The Treasury	North Bridge Rd
+5012	Pearl's Ctr	27 Eu Tong Sen St
+5022	People's Pk Ctr	13 Eu Tong Sen St
+5029	Boat Quay	South Bridge Rd
+5059	Hong Lim Park	11 New Bridge Rd
+5421	Aft Craig Rd	5 Craig Rd
+7021	Selegie Ctr	Selegie Rd
+8031	Dhoby Ghaut Stn	119 Penang Rd
+8041	YMCA	116 Orchard Rd
+8111	Winsland Hse	124 Penang Rd
+8121	Somerset Stn	127 Somerset Rd
+9022	Opp Orchard Stn	135 Orchard Boulevard
+9059	Natl Youth Council	130 Grange Rd
+9111	Opp Four Seasons Hotel	140 Orchard Boulevard
+9131	Opp Trader's Hotel	149 Grange Rd
+9141	British Council	152 Napier Rd
+9219	Far East Plaza	75 Scotts Rd
+10018	Bef Outram Rd	34 Eu Tong Sen St
+10091	Bt Merah Town Ctr	244 Jln Bt Merah
+10101	Spring S'pore Bldg	249 Jln Bt Merah
+10291	Bef Dawson Rd	Alexandra Rd
+10459	Blk 72	Redhill Rd
+11201	Csc Dempsey Clubhse	164 Holland Rd
+11221	Lien Twrs	172 Holland Rd
+11261	Holland Village	185 Holland Rd
+11289	Opp Tan Boon Chong Ave	Holland Rd
+11519	Opp Queensway Shopping Ctr	261 Alexandra Rd
+12031	Pandan Valley Condo	206 Ulu Pandan Rd
+12071	Blk 116	5 Clementi Rd
+12081	Maju Camp	6 Clementi Rd
+12101	Ngee Ann Poly	2 Clementi Rd
+12119	Police KINS Trg Camp	8 Ulu Pandan Rd
+12169	Pandan Valley	1 Pandan Valley
+12179	Montview	11 Mt Sinai Rise
+12189	Bef Mt Sinai Dr	10 Mt Sinai Rise
+13011	Opp S'pore Botanic Garden	155 Napier Rd
+13021	Aft Min Of Foreign Affairs	151 Holland Rd
+13059	Valley Pt Condo	59 River Valley Rd
+13141	Aft Zion Full Gospel Ch	6 Hoot Kiam Rd
+13211	Aft Unity St	23 Mohd Sultan Rd
+14041	Blk 54	5 Henderson Rd
+14049	Opp Blk 55	Henderson Rd
+14051	Aft Telok Blangah Hts	6 Henderson Rd
+14059	Bef Telok Blangah Hts	27 Henderson Rd
+14491	Opp Telok Blangah Mkt/FC	Telok Blangah Dr
+17009	Clementi Int	230 Clementi Ave 3
+17171	Clementi Stn	331 Commonwealth Ave West
+17229	Blk 335	224 Clementi Ave 5
+19031	Dover Stn	313 Commonwealth Ave West
+19089	United World College	300 Dover Rd
+19091	S'pore Poly	305 Dover Ave
+21179	Corporation Pl	34 Corporation Dr
+21421	Blk 176	18 Boon Lay Ave
+21609	Opp Blk 364	33 Corporation Dr
+21661	Yuan Ching Sec Sch	12 Yuan Ching Rd
+28041	The Synergy	44 Boon Lay Way
+40011	Little India Stn	12 Bt Timah Rd
+40121	Opp Newton Life Ch	2 Newton Rd
+40129	Newton Life Ch	13 Newton Rd
+40269	LP 57	Lornie Rd
+41051	Tan Kah Kee Stn	17 Bukit Timah Rd
+41069	Opp Tan Kah Kee Stn	18 Bukit Timah Rd
+41081	Sixth Ave Stn	6 Bukit Timah Rd
+42021	Aft Maple Ave	5 Bukit Timah Rd
+42061	King Albert Pk	1 Bukit Timah Rd
+44229	Bef Pending Stn	Pending Rd
+50061	Opp Hotel Royal	4 Newton Rd
+50069	Hotel Royal	5 Newton Rd
+50211	Opp Balestier Pt	38 Balestier Rd
+50221	Opp Balestier Twrs	39 Balestier Rd
+50229	Balestier Twrs	40 Balestier Rd
+50991	Blk 82	12 Whampoa Dr
+51069	Mt Alvernia Hosp	Thomson Rd
+51071	Macritchie Reservoir	Lornie Viaduct
+52051	Blk 147	8 Braddel Rd
+52171	Opp Braddel Stn	12 Lor 1 Toa Payoh
+52441	Blk 202	25 Lor 1 Toa Payoh
+52451	Blk 114	73 Whampoa Dr
+53009	Bishan Int	Bishan St 13
+53011	St. Theresa's Hme	Upper Thomson Rd
+53209	Aft Nea Reg Off	Sin Ming Dr
+53219	Aft Bishan St 21	Marymount Rd
+53231	Bishan Stn	Bishan Rd
+53329	Eunoia JC	Sin Ming Ave
+54081	Teck Ghee Ct	Ang Mo Kio Ave 1
+54181	Blk 258	5 Ang Mo Kio Ave 4
+54319	Opp Christ The King Ch	Ang Mo Kio Ave 8
+54371	Blk 409A	21 Ang Mo Kio Ave 10
+54381	Blk 443	56 Ang Mo Kio Ave 10
+64259	Blk 925A CP	Hougang St 91
+65139	Punggol Rd End	99 Punggol Rd
+65199	After Punggol Rd	1 Tampines Expy
+65381	Punggol Sec Sch	Edgefield Plains
+65431	Twin Waterfalls	18 Punggol Way
+65439	After TPE	8 Punggol Way
+65481	Bef Punggol Dr	88 Sentul CR
+67269	Opp Blk 203A	Sengkang East Ave
+67369	Blk 306 CP	Anchorvale Dr
+68161	Aft Seletar A'space Lane	West Camp Rd
+70019	Blk 125	46 Aljunied Rd
+70151	Aft Jln Anggerek	79 Merpati Rd
+70211	Blk 90	98 Pipit Rd
+72159	Opp Autobay @ Kaki Bt	Kaki Bt Ave 6
+75059	Bef Tampines West Stn	Tampines Ave 1
+77019	Blk 515	57 Pasir Ris Dr 1
+77029	Blk 571	24 Pasir Ris Dr 1
+77061	Ris Grandeur	11 Elias Rd
+77171	Aft Pasir Ris Stn Exit A	10 Pasir Ris Central
+80049	Aft Sims Way	75 Geyland Rd
+80159	Suntec City	168 Nicoll Highway
+80219	National Stadium	147 Nicoll Highway
+81131	Opp Grandlink Sq	47 Guillemard Rd
+81141	Versailles Condo	51 Guillemard Rd
+81189	Blk 62	65 Old Airport Rd
+82049	Joo Chiat Cplx	38 Changi Rd
+82061	Eusnos Stn	37 Sims Ave
+82109	City Plaza	45 Geyland Rd
+83059	88 Sentul Cr	23 Changi Rd
+83151	East Shore Hosp	18 Joo Chiat Pl
+84009	Bedok Temp Int	1 Bedok North Dr
+85019	Eastwood Ctr	45 Bedok Rd
+85091	Tanah Merah Stn	32 New Upp Changi Rd
+91099	Bef Wilkinson Rd	13 Mounbatten Rd
+92049	Parkway Parade	1 Marine Parade Rd
+92099	One Amber	114 Mountbatten Rd
+92141	Ocean Apts	2 East Coast Rd
+92159	St. Patrick's Sec Sch	93 East Coast Rd
+92241	Amber Gdn	87 Amber Rd
+93099	Siglap South Cc	75 Upp East Coast Rd
+94059	Temansek Sec Sch	56 Upp East Coast Rd
+95011	Bef Changi Airport PTB3	6 Airport Blvd
+95019	Aft Changi Airport PTB2	9 Airport Blvd
+95151	Airport Police Stn	1 Airport Blvd
+95209	Changi Airport PTB4	10 Airport Blvd
+99071	Aft Old Pier Rd	Cranwell Rd
+99161	Bef Changi Beach CP 3	Nicoll Dr
+99189	S'pore Aviation Ac	Telok Paku Rd

@@ -1,0 +1,101 @@
+officerID	name	yearsEmp
+3379	Ting Yi Choy	5
+3980	Pravin Raveendran s/o S. Kumar	16
+4446	Shalini Ratnasingam d/o P. Chandrasekaran	12
+5384	Timothy Tan Zhi Qiang	6
+7277	Loo Sing Yu	19
+9015	Leung Zheng Xun	8
+9483	Yang Ming De	5
+9640	Sarah Loke Wai Mun	5
+9759	Huang Jun Ming	7
+11377	Navin Kangatharan s/o J. Varatharajullu	9
+11641	Li Ming De	8
+12084	Jayina Mariam Binte Azmi Noh	19
+12368	Noh Yacob Bin Mohammad Juffri	13
+13030	Ho Kai Ling	8
+13562	Kwa Hao Rui	15
+17679	Ahmad Aydin Bin Yussuf Ridwan	15
+19460	Afreen Irfan Bin Hairul Anuar	3
+23605	Tung Wen Kai	16
+23998	Toh Hui Qi	10
+26731	Denzel Chiam	1
+26997	Low Sing Yu	20
+27120	Ding Hao Leo	12
+27172	Kathlyn sUMAN d/o P. Raj	16
+28703	Chee Cheng Boon	19
+29030	Chee Yong Chang	3
+29868	Cameron Chen Jin	3
+30126	Jasper Kwok Jia Cheng	5
+32635	"Darren, Ming Zhi Koh"	13
+34741	Joshua Tan Kai Wen	2
+35618	Fang Yong Hui	18
+35658	Dina Mastura Binte Mohamad Anuar	12
+36349	Daniel Irfan Bin Muhamad Hairul	22
+36822	Umar Saifullah Bin Muhamad Islan	1
+37602	Yang Hao Ming	8
+38547	Hong Zheng De	8
+39420	Guo Jia Jian	24
+39721	Baey Xuan Ming	11
+41086	Kavitha Krishnan d/o J. Varatharajullu	13
+43149	Anya Shazri Binte Mohamad Anuar	3
+43314	Chen Kok Meng	18
+44913	Teo Yan Ling	13
+45990	Siti Aisha Binte Hairul Azmi	6
+47549	S. Valliammai Meena	8
+48691	Lin Zheng Min	8
+49710	Sim Jia Yi	4
+50200	Cheng Yi De	19
+52051	Nur Naziah Binte Mohammad Ali	7
+53342	Yang Jing An	14
+53682	Muthu Kumaran s/o M. Prabu	10
+54454	Naqib Riduan Bin Mohammed Nazir	15
+54514	Ye Rui En	4
+55545	Preetha Narayanan d/o D. Thevar	23
+56369	Jason Tan Qi Xian	13
+56389	P. Manisha	9
+56425	Cheong Yi Xin	11
+57037	Aaryan Sathasivam s/o M. Prabu	1
+57320	Chen Cheng Boon	18
+59974	Zhong Ying Hui	23
+60714	Praneeta Jayaraj d/o A. Sathasivam	9
+61448	Jamie Leow Hwee Wen	10
+61722	Fan Kang Min	8
+62453	Shalini Ratnasingam d/o J. Navin	1
+63024	Choong Zhi En	8
+64739	Sim Hui Xuan	19
+64912	Low Jia Qi	6
+65286	Aaryan Sathasivam s/o J. Navin	11
+67118	Bay Xuan Ming	2
+67400	Saraswathi Devi d/o R. Ravindran	20
+69051	Zhong Kai Ling	19
+71043	Jeyaraj Indra Raj d/o A. Raj	4
+71524	Suraya Rukhsana Binte Abdullah	9
+71922	Ng Xi Ling	19
+72980	Huang Ming En	12
+74767	Manfred Ong Ze Qian	4
+76938	Huang Cheng Boon	22
+77911	Zhen Yi Ang	12
+80572	Qian Xuan Ying	19
+80765	N. Selva Kumar	15
+80940	Pradeep Nair s/o J. Varatharajullu	9
+81275	Daphne Au	9
+82339	Shawn Ho	11
+83128	Amier Danial Abdul Majid	7
+84800	Goh Si Wen	17
+85284	Zhaocheng Huang	4
+85471	Wu Ming En	4
+85707	Ali Agus Bin Muhamad Islan	16
+86342	Baey Jun Cheng	4
+87025	Fan Wen Ming	8
+87738	Danyial Lizam Bin Abdul Khalim	4
+89405	Azmi Noh Bin Mohammad Aniq	2
+90305	Zhen Yu Chong	9
+90307	Cheng Yong Quan	18
+90517	Chee Seng Hee	15
+90568	Leong Yong Quan	11
+92736	Christy Chong Zhou Ying	12
+95471	Nita Tia d/o N. Thevar	4
+98079	Ong Lin Min	8
+98428	Eng Jun Cheng	2
+99758	Robin Goh Fei Hong	3
+99794	Hao Xin En	15

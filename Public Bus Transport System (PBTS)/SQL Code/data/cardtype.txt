@@ -1,0 +1,4 @@
+Type	discount	topupAmount	description
+Adult	0	10	For working adults
+Senior	0.25	5	For senior citizens aged 60 years and above
+Student	0.4	5	For students currently enrolled in a primary school, secondary school or a tertiary educational institution
