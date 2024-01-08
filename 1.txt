@@ -1,0 +1,57 @@
+if len(variables) == 5:
+        # access the variables by indexing the variables list
+        CURRENT_CODE_QUESTION, prev_error_1, prev_codes_1, prev_out_1, prev_testcases_1, prev_analysis_1  = variables[0][0], variables[0][1], variables[0][2], variables[0][3], variables[0][4], variables[0][5]
+        _, prev_error_2, prev_codes_2, prev_out_2, prev_testcases_2, prev_analysis_2 = variables[1][0], variables[1][1], variables[1][2], variables[1][3], variables[1][4], variables[1][5]
+        _, prev_error_3, prev_codes_3, prev_out_3, prev_testcases_3, prev_analysis_3 = variables[2][0], variables[2][1], variables[2][2], variables[2][3], variables[2][4],  variables[2][5]
+        _, prev_error_4, prev_codes_4, prev_out_4, prev_testcases_4, prev_analysis_4 = variables[3][0], variables[3][1], variables[3][2], variables[3][3], variables[3][4], variables[3][5]
+        _, prev_error_5, prev_codes_5, prev_out_5, prev_testcases_5, prev_analysis_5 = variables[4][0], variables[4][1], variables[4][2], variables[4][3], variables[4][4],  variables[4][5]
+        prompt_final = """You are a professional code assisstant.
+  You will learn from previous attempts, including `previous_error` , `previous_python_solution`, `previous_standardout`, `previous_testcases` and `previous_analysis`
+  Then gather all the insights from these attemps and generate one better python solution for a given coding question. 
+  Now please learn from all these attemtps:
+  Attempt 1. previous error: {error_1}, previous_python_solution: {codes_1}, `previous_standardout`: {out_1}, `previous_testcases`: {testcase_1}, `previous_analysis`: {analysis_1}
+  Attempt 2. previous error: {error_2}, previous_python_solution: {codes_2}, `previous_standardout`: {out_2}, `previous_testcases`: {testcase_2}, `previous_analysis`: {analysis_2}
+  Attempt 3. previous error: {error_3}, previous_python_solution: {codes_3}, `previous_standardout`: {out_3}, `previous_testcases`: {testcase_3}, `previous_analysis`: {analysis_3}
+  Attempt 4. previous error: {error_4}, previous_python_solution: {codes_4}, `previous_standardout`: {out_4}, `previous_testcases`: {testcase_4}, `previous_analysis`: {analysis_4}
+  Attempt 5. previous error: {error_5}, previous_python_solution: {codes_5}, `previous_standardout`: {out_5}, `previous_testcases`: {testcase_5}, `previous_analysis`: {analysis_5}
+  then generate one better python solution for this question: {code_question}
+  You need to write certain reasoning, and `python_solution`. 
+  You must start your python_solution with ```python
+  """.format(error_1=prev_error_1, codes_1=prev_codes_1, out_1 = prev_out_1, testcase_1=prev_testcases_1, analysis_1=prev_analysis_1,
+             error_2=prev_error_2, codes_2=prev_codes_2, out_2 = prev_out_2, testcase_2=prev_testcases_2, analysis_2=prev_analysis_2,
+             error_3=prev_error_3, codes_3=prev_codes_3, out_3 = prev_out_3, testcase_3=prev_testcases_3, analysis_3=prev_analysis_3,
+             error_4=prev_error_4, codes_4=prev_codes_4, out_4 = prev_out_4, testcase_4=prev_testcases_4, analysis_4=prev_analysis_4,
+             error_5=prev_error_5, codes_5=prev_codes_5, out_5 = prev_out_5, testcase_5=prev_testcases_5, analysis_5=prev_analysis_5,
+            code_question=CURRENT_CODE_QUESTION)
+      elif len(variables) == 3:
+         # access the variables by indexing the variables list
+        CURRENT_CODE_QUESTION, prev_error_1, prev_codes_1, prev_out_1, prev_testcases_1, prev_analysis_1  = variables[0][0], variables[0][1], variables[0][2], variables[0][3], variables[0][4], variables[0][5]
+        _, prev_error_2, prev_codes_2, prev_out_2, prev_testcases_2, prev_analysis_2 = variables[1][0], variables[1][1], variables[1][2], variables[1][3], variables[1][4], variables[1][5]
+        _, prev_error_3, prev_codes_3, prev_out_3, prev_testcases_3, prev_analysis_3 = variables[2][0], variables[2][1], variables[2][2], variables[2][3], variables[2][4],  variables[2][5]
+        prompt_final = """You are a professional code assisstant.
+  You will learn from previous attempts, including `previous_error` , `previous_python_solution`, `previous_standardout`, `previous_testcases` and `previous_analysis`
+  Then gather all the insights from these attemps and generate one better python solution for a given coding question. 
+  Now please learn from all these attemtps:
+  Attempt 1. previous error: {error_1}, previous_python_solution: {codes_1}, `previous_standardout`: {out_1}, `previous_testcases`: {testcase_1}, `previous_analysis`: {analysis_1}
+  Attempt 2. previous error: {error_2}, previous_python_solution: {codes_2}, `previous_standardout`: {out_2}, `previous_testcases`: {testcase_2}, `previous_analysis`: {analysis_2}
+  Attempt 3. previous error: {error_3}, previous_python_solution: {codes_3}, `previous_standardout`: {out_3}, `previous_testcases`: {testcase_3}, `previous_analysis`: {analysis_3}
+  then generate one better python solution for this question: {code_question}
+  You need to write certain reasoning, and `python_solution`. 
+  You must start your python_solution with ```python
+  """.format(error_1=prev_error_1, codes_1=prev_codes_1, out_1 = prev_out_1, testcase_1=prev_testcases_1, analysis_1=prev_analysis_1,
+             error_2=prev_error_2, codes_2=prev_codes_2, out_2 = prev_out_2, testcase_2=prev_testcases_2, analysis_2=prev_analysis_2,
+             error_3=prev_error_3, codes_3=prev_codes_3, out_3 = prev_out_3, testcase_3=prev_testcases_3, analysis_3=prev_analysis_3,
+            code_question=CURRENT_CODE_QUESTION)
+      elif len(variables) == 1:
+         # access the variables by indexing the variables list
+        CURRENT_CODE_QUESTION, prev_error_1, prev_codes_1, prev_out_1, prev_testcases_1, prev_analysis_1  = variables[0][0], variables[0][1], variables[0][2], variables[0][3], variables[0][4], variables[0][5]
+        prompt_final = """You are a professional code assisstant.
+  You will learn from previous attempts, including `previous_error` , `previous_python_solution`, `previous_standardout`, `previous_testcases` and `previous_analysis`
+  Then gather all the insights from these attemps and generate one better python solution for a given coding question. 
+  Now please learn from all these attemtps:
+  Attempt 1. previous error: {error_1}, previous_python_solution: {codes_1}, `previous_standardout`: {out_1}, `previous_testcases`: {testcase_1}, `previous_analysis`: {analysis_1}
+  then generate one better python solution for this question: {code_question}
+  You need to write certain reasoning, and `python_solution`. 
+  You must start your python_solution with ```python
+  """.format(error_1=prev_error_1, codes_1=prev_codes_1, out_1 = prev_out_1, testcase_1=prev_testcases_1, analysis_1=prev_analysis_1,
+            code_question=CURRENT_CODE_QUESTION)
