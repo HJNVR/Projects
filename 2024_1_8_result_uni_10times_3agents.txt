@@ -2892,4 +2892,128 @@ assert find_max(["a", "bb", "ccc"]) == "ccc"
     total_eaten = min(number + need, remaining)
     carrots_left = max(0, remaining - (number + need))
     return [total_eaten, carrots_left]
+======def do_algebra(operator, operand):
+    """
+    Given two lists operator, and operand. The first list has basic algebra operations, and 
+    the second list is a list of integers. Use the two given lists to build the algebric 
+    expression and return the evaluation of this expression.
+
+    The basic algebra operations:
+    Addition ( + ) 
+    Subtraction ( - ) 
+    Multiplication ( * ) 
+    Floor division ( // ) 
+    Exponentiation ( ** ) 
+
+    Example:
+    operator['+', '*', '-']
+    array = [2, 3, 4, 5]
+    result = 2 + 3 * 4 - 5
+    => result = 9
+
+    Note:
+        The length of operator list is equal to the length of operand list minus one.
+        Operand is a list of of non-negative integers.
+        Operator list has at least one operator, and operand list has at least two operands.
+
+    """
+    precedence = {'+': 1, '-': 1, '*': 2, '//': 2, '**': 3}
+
+    def apply_operator(operands_stack, operator):
+        if len(operands_stack) < 2:
+            raise ValueError(f"Insufficient operands for operator {operator}")
+        operand2 = operands_stack.pop()
+        operand1 = operands_stack.pop()
+        if operator == '+':
+            operands_stack.append(operand1 + operand2)
+        elif operator == '-':
+            operands_stack.append(operand1 - operand2)
+        elif operator == '*':
+            operands_stack.append(operand1 * operand2)
+        elif operator == '//':
+            operands_stack.append(operand1 // operand2)
+        elif operator == '**':
+            operands_stack.append(operand1 ** operand2)
+
+    if len(operator) != len(operand) - 1:
+        raise ValueError("Number of operators should be one less than the number of operands")
+
+    stack_operands = []
+    stack_operators = []
+
+    for i in range(len(operator)):
+        op = operator[i]
+        if op in precedence:
+            while (stack_operators and precedence[op] <= precedence[stack_operators[-1]]):
+                apply_operator(stack_operands, stack_operators.pop())
+            stack_operators.append(op)
+        else:
+            stack_operands.append(operand[i])
+
+    while stack_operators:
+        apply_operator(stack_operands, stack_operators.pop())
+
+    return stack_operands[0]
+======def solve(s):
+    modified_chars = []  # to store the modified characters
+    has_letter = False  # flag to track the presence of letters in the input string
+
+    # Iterate through each character in the input string
+    for char in s:
+        if char.isalpha():  # if the character is a letter
+            has_letter = True  # set the flag to True
+            modified_chars.append(char.upper() if char.islower() else char.lower())  # reverse the case and add to the modified list
+        else:
+            modified_chars.append(char)  # if not a letter, add the character as it is
+
+    # Check if there are any letters in the input string
+    if not has_letter:
+        return s[::-1]  # if no letters, return the reversed string
+    else:
+        return ''.join(modified_chars)  # otherwise, return the modified string
+======import hashlib
+
+def string_to_md5(text):
+    """
+    Given a string 'text', return its md5 hash equivalent string.
+    If 'text' is an empty string, return None.
+
+    Parameters:
+    text (str): The input string.
+
+    Returns:
+    str: The md5 hash of the input string, or None if the input string is empty.
+    """
+    if text == "":
+        return None
+    else:
+        return hashlib.md5(text.encode()).hexdigest()
+======def generate_integers(a, b):
+        """
+        Given two positive integers a and b, return the even digits between a and b, in ascending order.
+
+        Args:
+        a (int): The first positive integer
+        b (int): The second positive integer
+
+        Returns:
+        list: The list of even digits between a and b, in ascending order
+        """
+
+        # Ensure a is not greater than b
+        a, b = min(a, b), max(a, b)
+
+        # Handle case where both a and b are even
+        if a % 2 == 0 and b % 2 == 0:
+            return list(range(a, b + 1, 2))
+        # Adjust a to the first even number if it's not already even
+        if a % 2 != 0:
+            a += 1
+        # Check if there are no even digits in the range
+        if a > b:
+            return []
+        # Generate even digits between a and b using list comprehension
+        result = list(range(a, b + 1, 2))
+
+        return result
 ======
