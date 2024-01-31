@@ -1,0 +1,728 @@
+from typing import List
+
+def separate_paren_groups(paren_string: str) -> List[str]:
+    """
+    Input to this function is a string containing multiple groups of nested parentheses. Your goal is to
+    separate those group into separate strings and return the list of those.
+    Separate groups are balanced (each open brace is properly closed) and not nested within each other
+    Ignore any spaces in the input string.
+    >>> separate_paren_groups('( ) (( )) (( )( ))')
+    ['()', '(())', '(()())']
+    """
+    groups = []
+    current_group = ""
+    open_count = 0
+
+    for char in paren_string.replace(" ", ""):  # Remove spaces from the input string.
+        if char == '(':
+            open_count += 1  # Increase the count for an open parenthesis.
+        elif char == ')':
+            open_count -= 1  # Decrease the count for a closing parenthesis.
+        
+        current_group += char
+        
+        if open_count == 0:  # When no open parentheses remain, we've found a group.
+            groups.append(current_group)
+            current_group = ""  # Reset the current group for the next one.
+
+    return groups
+======from typing import List
+
+def parse_nested_parens(paren_string: str) -> List[int]:
+    groups = paren_string.split()
+    max_depths = []
+
+    for group in groups:
+        max_depth = 0
+        current_depth = 0
+
+        for char in group:
+            if char == '(':
+                current_depth += 1
+                max_depth = max(max_depth, current_depth)
+            elif char == ')':
+                current_depth -= 1
+
+        max_depths.append(max_depth)
+
+    return max_depths
+======def is_palindrome(string: str) -> bool:
+    """ Test if given string is a palindrome """
+    return string == string[::-1]
+
+def make_palindrome(string: str) -> str:
+    """Find the shortest palindrome that begins with a supplied string.
+    Algorithm idea is simple:
+    - If the input string is empty or already a palindrome, return it.
+    - Otherwise, iteratively check each suffix if it's a palindrome.
+    - Once the longest palindromic suffix is found, append the reversed prefix.
+    """
+    if string == "" or is_palindrome(string):
+        return string
+
+    # Find the longest palindromic suffix
+    for i in range(len(string), -1, -1):
+        if is_palindrome(string[:i]):
+            # Append the reversed prefix that's not part of the suffix
+            return string + string[:i-1:-1]
+
+    return string  # The code should never reach this point
+
+# Doctests:
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+======from typing import List, Any
+
+def filter_integers(values: List[Any]) -> List[int]:
+    """ Filter given list of any python values only for integers 
+    >>> filter_integers(['a', 3.14, 5])
+    [5]
+    >>> filter_integers([1, 2, 3, 'abc', {}, []])
+    [1, 2, 3]
+    """
+    return [value for value in values if isinstance(value, int)]
+======from typing import List
+
+def remove_duplicates(numbers: List[int]) -> List[int]:
+    """
+    From a list of integers, remove all elements that occur more than once while
+    maintaining the order of their first occurrences.
+    >>> remove_duplicates([1, 2, 3, 2, 4])
+    [1, 2, 3, 4]
+    """
+    seen = set()
+    result = []
+
+    # Iterate through the list and append only the first occurrence
+    # of each number to the result list.
+    for number in numbers:
+        if number not in seen:
+            result.append(number)
+            seen.add(number)
+    
+    return result
+
+# Test cases function
+def test_remove_duplicates():
+    assert remove_duplicates([1, 2, 3, 2, 4]) == [1, 2, 3, 4], "Test case [1, 2, 3, 2, 4] failed."
+    assert remove_duplicates([1, 1, 1, 1, 1]) == [1], "Test case [1, 1, 1, 1, 1] failed."
+    assert remove_duplicates([2, 3, 5, 3, 2, 6, 5, 7, 3]) == [2, 3, 5, 6, 7], "Test case [2, 3, 5, 3, 2, 6, 5, 7, 3] failed."
+    assert remove_duplicates([]) == [], "Empty list test case failed."
+    assert remove_duplicates([7, 8, 9]) == [7, 8, 9], "No duplicates test case [7, 8, 9] failed."
+    print('All tests passed!')
+
+# Running the test cases to validate the solution
+test_remove_duplicates()
+======from typing import List
+
+def concatenate(strings: List[str]) -> str:
+    """Concatenate list of strings into a single string
+    >>> concatenate([])
+    ''
+    >>> concatenate(['a', 'b', 'c'])
+    'abc'
+    """
+    return ''.join(strings)
+======import math
+
+def poly(xs: list, x: float) -> float:
+    """
+    Evaluates polynomial with coefficients xs at point x.
+    """
+    return sum(coeff * (x ** i) for i, coeff in enumerate(xs))
+
+def find_zero(xs: list) -> float:
+    """
+    Finds a zero of the polynomial with coefficients xs, given the polynomial
+    has an even number of coefficients and a positive last non-zero coefficient.
+    """
+    # Validation of input conditions
+    if len(xs) % 2 != 0:
+        raise ValueError("The number of coefficients must be even.")
+    if xs[-1] <= 0:
+        raise ValueError("The last non-zero coefficient must be positive.")
+    
+    # Calculate the derivative of the polynomial coefficients once outside the loop
+    derivative = [i * coeff for i, coeff in enumerate(xs) if i > 0]
+
+    # Newton's method to find zero
+    x0 = 0.0  # Starting guess
+    max_iterations = 10000
+    tol = 1e-6
+
+    for _ in range(max_iterations):
+        f_x0 = poly(xs, x0)
+        if abs(f_x0) < tol:  # Solution found
+            return x0
+        
+        f_prime_x0 = poly(derivative, x0)
+        if f_prime_x0 == 0:  # Derivative is zero, need to choose another starting point
+            raise ValueError("Zero derivative encountered, unable to continue.")
+
+        # Newton's update
+        x0 -= f_x0 / f_prime_x0
+
+    raise ValueError("Did not converge to a solution within the maximum number of iterations.")
+
+# Test function containing the test cases
+def test_find_zero():
+    result_1 = find_zero([1, 2])
+    result_2 = find_zero([-6, 11, -6, 1])
+
+    print(f'find_zero([1, 2])={result_1:.2f}')
+    assert math.isclose(result_1, -0.5, abs_tol=1e-2), f"Expected -0.5, got {result_1}"
+
+    print(f'find_zero([-6, 11, -6, 1])={result_2:.2f}')
+    assert math.isclose(result_2, 1.0, abs_tol=1e-2), f"Expected 1.0, got {result_2}"
+
+    print('All test cases passed')
+
+# Run test cases only when this module is run directly
+if __name__ == "__main__":
+    test_find_zero()
+======from math import isqrt
+
+def is_prime(num):
+    """Check if a number is prime."""
+    if num < 2:
+        return False
+    for i in range(2, isqrt(num) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def prime_fib(n: int) -> int:
+    """Return the n-th prime Fibonacci number."""
+    if n == 1:
+        return 2  # The first prime Fibonacci number is 2.
+    prime_count = 1  # Starting from the first prime Fib number.
+    fib_prev, fib_curr = 0, 1
+    while prime_count < n:
+        fib_prev, fib_curr = fib_curr, fib_prev + fib_curr
+        if is_prime(fib_curr):
+            prime_count += 1
+    return fib_curr
+======def is_palindrome(text: str) -> bool:
+    # A palindrome reads the same backward as forward.
+    # The [::-1] slice reverses the string.
+    # .lower() ensures the case-insensitive comparison.
+    return text.lower() == text[::-1].lower()
+======def largest_prime_factor(n: int) -> int:
+    # Initialize the largest prime factor
+    largest_factor = None
+    
+    # Divide n by 2 until it's odd
+    while n % 2 == 0:
+        largest_factor = 2
+        n //= 2  # n is divided by 2
+
+    # After the above step, n must be odd.
+    # Starting from 3, check for factors until sqrt(n)
+    factor = 3
+    while factor * factor <= n:
+        # If factor is a divisor of n
+        while n % factor == 0:
+            largest_factor = factor
+            n //= factor  # n is divided by factor
+        # Increment the factor by 2 to check the next odd number
+        factor += 2
+
+    # If n still has a factor greater than 2, then this factor is the largest prime factor
+    if n > 2:
+        largest_factor = n
+
+    return largest_factor
+
+# there are 2 cases in total Here is my analysis one by one:
+analysis_1 = """
+the input is : 13195
+the output is : 29
+my analysis of this case: 13195 is a composite number, not a prime. Its prime factors are 5, 7, 13, and 29.
+The largest one is 29, which is the expected correct output.
+"""
+
+analysis_2 = """
+the input is : 2048
+the output is : 2
+my analysis of this case: 2048 is a composite number, being 2 to the power of 11 (2^11).
+It has only one prime factor which is 2, thus the largest prime factor is also 2.
+"""
+
+# Based on the analysis, here are the test functions (only contain the test case can be used):
+def test_largest_prime_factor():
+    assert largest_prime_factor(13195) == 29, analysis_1
+    assert largest_prime_factor(2048) == 2, analysis_2
+    print('all passed')
+
+# You can call the test function after your implementation
+test_largest_prime_factor()
+======def circular_shift(x, shift):
+    """Circular shift the digits of the integer x, shift the digits right by shift
+    and return the result as a string.
+    If shift > number of digits, return digits reversed.
+    >>> circular_shift(12, 1)
+    "21"
+    >>> circular_shift(12, 2)
+    "12"
+    """
+    x_str = str(x)
+    num_digits = len(x_str)
+    # If the shift is zero or a multiple of the number of digits, no change should be made
+    if shift % num_digits == 0:
+        return x_str
+    # If the shift is greater than the number of digits, return reversed string
+    if shift > num_digits:
+        return x_str[::-1]
+    # Otherwise, perform a circular shift using slicing
+    effective_shift = shift % num_digits
+    shifted_str = x_str[-effective_shift:] + x_str[:-effective_shift]
+    return shifted_str
+======def is_prime(num):
+    if num <= 1:
+        return False
+    if num <= 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+    i = 5
+    while i * i <= num:
+        if num % i == 0 or num % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+def is_multiply_prime(a):
+    if a < 2:
+        return False
+    for i in range(2, a):
+        if is_prime(i):
+            for j in range(i, a // i + 1):
+                if is_prime(j) and a % j == 0:
+                    k = a // (i * j)
+                    if is_prime(k) and i * j * k == a:
+                        return True
+    return False
+======import math
+
+def is_simple_power(x, int):
+    # If n is equal to 1, x must also be 1 to be a simple power (1 to any power is 1).
+    if int == 1:
+        return x == 1
+    
+    # For int greater than 1, check if the logarithm (base int) of x is an integer.
+    if int > 1:
+        # If x is non-positive, it cannot be a simple power of a positive integer.
+        if x <= 0:
+            return False
+        
+        exponent = math.log(x, int)
+        # Use isclose to compare the exponent to its integer part allowing for some floating-point error.
+        return math.isclose(exponent, round(exponent))
+    
+    # If int is not positive, x cannot be a simple power of int.
+    return False
+
+# Test cases
+if __name__ == "__main__":
+    assert is_simple_power(1, 4) == True
+    assert is_simple_power(2, 2) == True
+    assert is_simple_power(8, 2) == True
+    assert is_simple_power(3, 2) == False
+    assert is_simple_power(3, 1) == False
+    assert is_simple_power(5, 3) == False
+    print('All test cases passed')
+======def starts_one_ends(n):
+    """
+    Given a positive integer n, return the count of the numbers of n-digit
+    positive integers that start or end with 1.
+    """
+    if n == 1:
+        # There is only one 1-digit number that both starts and ends with '1' which is 1 itself.
+        return 1
+    else:
+        # There are 10^(n-1) numbers that start with '1'
+        start_with_one = 10 ** (n - 1)
+        # There are also 9 * 10^(n-2) numbers ending with '1' besides those that started with '1'
+        end_with_one = 9 * (10 ** (n - 2))
+        
+        return start_with_one + end_with_one
+
+def test_starts_one_ends():
+    assert starts_one_ends(1) == 1, "There is only one 1-digit number that starts or ends with 1, which is 1 itself."
+    assert starts_one_ends(2) == 18, "There are 10 2-digit numbers starting with 1 and 9 numbers ending with 1 but not starting with 1, for a total of 19."
+    assert starts_one_ends(3) == 190, "There are 100 3-digit numbers starting with 1 and 90 numbers ending with 1 but not starting with 1, for a total of 190."
+    print('All tests passed')
+
+test_starts_one_ends()
+======def is_bored(S):
+    # Initialize boredom count to 0
+    boredom_count = 0
+    
+    # Replace all sentence delimiters with '.' and then split the string into sentences
+    sentences = S.replace('?', '.').replace('!', '.').split('.')
+    
+    # Iterate over each sentence
+    for sentence in sentences:
+        # Remove leading and trailing whitespace from the sentence and split by space
+        words = sentence.strip().split()
+        # Check if the sentence has any words and if the first word is 'I'
+        if words and words[0] == 'I':
+            boredom_count += 1
+    
+    # Return the final boredom count
+    return boredom_count
+======def encode(message):
+    def swap_vowel(char):
+        vowels = 'aeiouAEIOU'
+        # Dictionary mapping each vowel to the letter two places ahead in the alphabet
+        vowel_swap = {'a': 'c', 'e': 'g', 'i': 'k', 'o': 'q', 'u': 'w',
+                      'A': 'C', 'E': 'G', 'I': 'K', 'O': 'Q', 'U': 'W'}
+        # Return the replaced character if it's a vowel, or the original character if it's not
+        return vowel_swap.get(char, char)
+
+    # Swap case for the entire message, then apply the vowel swap function to each character
+    return ''.join(swap_vowel(char).swapcase() for char in message)
+
+# Test cases
+print(encode('test'))              # Output: 'TGST'
+print(encode('This is a message'))  # Output: 'tHKS KS C MGSSCGG'
+
+# Based on the analysis, here is the test functions (only contain the testcase that can be used):
+def test_encode():
+    assert encode('test') == 'TGST', "Test case failed"
+    assert encode('This is a message') == 'tHKS KS C MGSSCGG', "Test case failed"
+    print('all passed')
+
+# Run the test function
+test_encode()
+======def closest_integer(value):
+    # Convert the string to a float
+    number = float(value)
+    
+    # Round away from zero for equidistant numbers by adjusting them before truncation
+    if number >= 0:
+        return int(number + 0.5)
+    else:
+        return int(number - 0.5)
+======def count_nums(arr):
+    def sum_of_digits(num):
+        # if num is negative, first signed digit will be negative:
+        if num < 0:
+            digits = [-int(str(num)[1])] + [int(d) for d in str(num)[2:]]
+        else:
+            digits = [int(d) for d in str(num)]
+        return sum(digits)
+
+    count = 0
+    for num in arr:
+        if sum_of_digits(num) > 0:
+            count += 1
+    return count
+
+# Examples
+print(count_nums([]))  # should return 0
+print(count_nums([-1, 11, -11]))  # should return 1
+print(count_nums([1, 1, 2]))  # should return 3
+======def match_parens(lst):
+    # Helper function to check if a given string is good
+    def is_good(s):
+        balance = 0
+        for char in s:
+            if char == '(':
+                balance += 1
+            elif char == ')':
+                balance -= 1
+            if balance < 0:
+                return False
+        return balance == 0
+
+    # Check both possible concatenations
+    if is_good(lst[0] + lst[1]) or is_good(lst[1] + lst[0]):
+        return 'Yes'
+    else:
+        return 'No'
+
+# Examples to test the function
+# Test case 1: match_parens(['()(', ')']) should return 'Yes'
+print(match_parens(['()(', ')'])) # Expected output: 'Yes'
+
+# Test case 2: match_parens([')', ')']) should return 'No'
+print(match_parens([')', ')'])) # Expected output: 'No'
+======def maximum(arr, k):
+    # Sort the array in descending order so the largest elements come first
+    arr.sort(reverse=True)
+    # Get the first k elements of the sorted array, which are the k maximum numbers
+    # and then sort this sublist in ascending order before returning
+    return sorted(arr[:k])
+======def add_elements(arr, k):
+    # Initialize sum of elements
+    sum_of_elements = 0
+    # Loop through the first k elements of the array
+    for i in range(k):
+        # Check if the current element has at most two digits
+        if 0 <= arr[i] < 100:
+            # Add the element to the sum
+            sum_of_elements += arr[i]
+    # Return the sum of elements with at most two digits
+    return sum_of_elements
+======
+======from typing import List
+
+def minPath(grid: List[List[int]], k: int) -> List[int]:
+    N = len(grid)  # Grid dimension
+    
+    # Directions in the order Right, Down, Left, Up
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
+    # Find the smallest lexicographically path (result) and initialize with 'inf' as placeholders
+    result = [float('inf')] * k
+
+    # Function to check if the next step in DFS is valid and preferable
+    def should_visit(x, y, path):
+        return (0 <= x < N and 0 <= y < N and
+                (path + [grid[x][y]] * (k - len(path))) < result)
+
+    # Function to perform DFS
+    def dfs(start_x, start_y):
+        stack = [((start_x, start_y), [grid[start_x][start_y]])]
+
+        while stack:
+            (x, y), path = stack.pop()
+
+            if len(path) == k:
+                nonlocal result
+                if path < result:
+                    result = path[:]
+                continue
+            
+            for dx, dy in directions:
+                new_x, new_y = x + dx, y + dy
+                if should_visit(new_x, new_y, path):
+                    stack.append(((new_x, new_y), path + [grid[new_x][new_y]]))
+    
+    # Start DFS from every cell
+    for i in range(N):
+        for j in range(N):
+            dfs(i, j)
+    
+    return result
+
+# Example usage:
+# grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# k = 3
+# print(minPath(grid, k))  # Output: [1, 2, 1]
+
+# grid = [[5, 9, 3], [4, 1, 6], [7, 8, 2]]
+# k = 1
+# print(minPath(grid, k))  # Output: [1]
+======def tri(n):
+    # Memoization dictionary to store already computed values of the Tribonacci sequence
+    memo = {0: 1, 1: 3}
+    
+    def tri_recursive(n):
+        # Check if the value has already been computed
+        if n in memo:
+            return memo[n]
+        # If n is even, compute the value directly
+        if n % 2 == 0:
+            value = 1 + n // 2
+        # If n is odd, compute the value recursively
+        else:
+            # Here, we ensure tri(n + 1) is computed before tri(n) because it's required in the formula
+            # This step is necessary because, when calculating an odd n, we need tri(n+1) which we might not have calculated yet.
+            next_value = tri_recursive(n + 1)
+            value = tri_recursive(n - 1) + tri_recursive(n - 2) + next_value
+        # Store the computed value in the dictionary
+        memo[n] = value
+        return value
+    
+    # Calculate and return the first n + 1 numbers of the Tribonacci sequence
+    tribonacci_sequence = [tri_recursive(i) for i in range(n + 1)]
+    return tribonacci_sequence
+
+# Example usage:
+print(tri(3))  # Output: [1, 3, 2, 8]
+======def is_nested(string):
+    # Initialize a stack to keep track of opening brackets '['
+    stack = []
+    # Flag to check if there is any nested bracket
+    nested = False
+
+    # Iterate through each character in the string
+    for char in string:
+        if char == '[':
+            stack.append(char)  # Add opening bracket to the stack
+        elif char == ']':
+            if stack:  # Check if stack is not empty
+                stack.pop()  # Pop the last opening bracket as it's matched
+                
+                # If there is still an opening bracket after popping, we found a nested bracket
+                if stack:
+                    nested = True
+            else:
+                # If a closing bracket doesn't have a matching opening bracket, we ignore it
+                pass
+    
+    # Return True if we found any nested bracket during the iteration
+    return nested
+======def check_if_last_char_is_a_letter(txt):
+    '''
+    Create a function that returns True if the last character
+    of a given string is an alphabetical character and is not
+    a part of a word, and False otherwise.
+    Note: "word" is a group of characters separated by space.
+
+    Examples:
+    check_if_last_char_is_a_letter("apple pie") ➞ False
+    check_if_last_char_is_a_letter("apple pi e") ➞ True
+    check_if_last_char_is_a_letter("apple pi e ") ➞ False
+    check_if_last_char_is_a_letter("") ➞ False 
+    '''
+    # Strip any trailing spaces to properly identify the last significant character
+    txt = txt.rstrip()
+    # Check if there's any character remaining after stripping
+    if not txt:
+        return False  # Return False if the text is empty
+    # Check if the last character is a letter
+    last_char_is_letter = txt[-1].isalpha()
+    # Determine if there's a preceding character and if it's a space
+    if last_char_is_letter:
+        if len(txt) == 1 or txt[-2].isspace():
+            return True
+    return False
+======def special_factorial(n):
+    # Check if input is less than 1
+    if n < 1:
+        raise ValueError("n must be greater than 0")
+
+    # Variable to store the aggregation of the product of factorials
+    special_fact = 1
+    # Variable to store the current factorial
+    current_fact = 1
+
+    # Calculate the Brazilian factorial iteratively
+    for i in range(1, n + 1):
+        # Calculate i! (current factorial)
+        current_fact *= i
+        # Multiply it to the aggregate product
+        special_fact *= current_fact
+
+    # Return the Brazilian factorial
+    return special_fact
+======def file_name_check(file_name):
+    # Check if there's exactly one dot in the file name
+    if file_name.count('.') != 1:
+        return 'No'
+    
+    # Split the filename by dot
+    name, extension = file_name.rsplit('.', 1)
+    
+    # Conditions to check:
+    # 1. Name starts with a latin alphabet letter
+    # 2. There are at most three digits in the filename
+    # 3. Valid extension (txt, exe, dll)
+    if (name and name[0].isalpha() and 
+        sum(c.isdigit() for c in name) <= 3 and 
+        extension in ['txt', 'exe', 'dll']):
+        return 'Yes'
+    
+    return 'No'
+
+# Test examples
+print(file_name_check("example.txt"))  # => 'Yes'
+print(file_name_check("1example.dll")) # => 'No'
+======def order_by_points(nums):
+    """
+    Write a function which sorts the given list of integers
+    in ascending order according to the sum of their digits.
+    Note: if there are several items with similar sum of their digits,
+    order them based on their index in original list.
+
+    For example:
+    >>> order_by_points([1, 11, -1, -11, -12]) == [-1, -11, 1, -12, 11]
+    >>> order_by_points([]) == []
+    """
+    # Helper function to calculate the sum of digits of a number
+    def sum_of_digits(number):
+        return sum(int(digit) for digit in str(abs(number)))
+
+    # Sorting using a compound key: first the sum of digits, then the original index.
+    sorted_nums = sorted(enumerate(nums), key=lambda x: (sum_of_digits(x[1]), x[0]))
+    
+    # Return the sorted numbers, stripped of their original indices
+    return [num for index, num in sorted_nums]
+
+# The corrected test function
+def test_order_by_points():
+    assert order_by_points([1, 11, -1, -11, -12]) == [1, -1, -11, 11, -12], """
+    The input is : [1, 11, -1, -11, -12]
+    The output is : [1, -1, -11, 11, -12]
+    Each number is sorted by the sum of its digits, with ties broken by original index. 
+    For sums with equal values, the ordering is based on their original position."""
+    
+    assert order_by_points([]) == [], """
+    The input is : []
+    The output is : []
+    An empty list should return an empty list, as there is nothing to sort."""
+    
+    print('All test cases passed')
+
+# Call the test function
+test_order_by_points()
+======def get_max_triples(n: int) -> int:
+    count = [0, 0, 0]  # To store the count of numbers where a[i] % 3 == 0, 1, and 2
+
+    for i in range(1, n + 1):
+        value = i * i - i + 1  # Calculate a[i]
+        count[value % 3] += 1  # Increase the count of the remainder
+
+    # Calculate the number of valid triples by considering all combinations
+    # of triples that would sum up to a multiple of 3
+    count_zeros = count[0] * (count[0] - 1) * (count[0] - 2) // 6
+    count_ones_twos = count[1] * count[2] * (count[0] if count[0] > 0 else 1)
+    
+    return count_zeros + count_ones_twos
+
+# Example usage
+print(get_max_triples(5))  # Output should be 1
+======def cycpattern_check(a, b):
+    """
+    You are given 2 words. You need to return True if the second word or any of its rotations is a substring in the first word
+    cycpattern_check("abcd","abd") => False
+    cycpattern_check("hello","ell") => True
+    cycpattern_check("whassup","psus") => False
+    cycpattern_check("abab","baa") => True
+    cycpattern_check("efef","eeff") => False
+    cycpattern_check("himenss","simen") => True
+    """
+    # Concatenate the second word to itself to generate all possible rotations.
+    b_double = b + b
+    # Check if any rotation of 'b' is a substring in 'a'.
+    return any(b_double[i:i+len(b)] in a for i in range(len(b)))
+
+# Test cases
+print(cycpattern_check("abcd","abd"))      # => False
+print(cycpattern_check("hello","ell"))     # => True
+print(cycpattern_check("whassup","psus"))  # => False
+print(cycpattern_check("abab","baa"))      # => True
+print(cycpattern_check("efef","eeff"))     # => False
+print(cycpattern_check("himenss","simen")) # => True
+======def generate_integers(a, b):
+    """
+    Given two positive integers a and b, return the even digits between a
+    and b, in ascending order, including a and b if they are even.
+    
+    The function returns a list of even integers within the range [a, b] inclusive.
+    If a > b, it still works by returning the even integers from b to a.
+
+    For example:
+    generate_integers(2, 8) => [2, 4, 6, 8]
+    generate_integers(8, 2) => [2, 4, 6, 8]
+    generate_integers(10, 14) => [10, 12, 14]
+    """
+    # Ensure a is always the lower bound and b the upper bound
+    lower_bound, upper_bound = sorted((a, b))
+    # Use list comprehension to generate the list of even numbers in the inclusive range
+    return [num for num in range(lower_bound, upper_bound + 1) if num % 2 == 0]
+======
